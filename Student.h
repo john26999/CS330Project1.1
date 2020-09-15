@@ -3,8 +3,9 @@
 
 #include <iostream>
 
-#include "Course.h"
 #include "Schedule.h"
+#include "Course.h"
+
 
 /**
  * A Student has a name and a schedule.
