@@ -66,7 +66,24 @@ Schedule::~Schedule()
  */
 void Schedule::appendNoCheck(Course course)
 {
+    Node *newNode;                      //pointer to create a new node
+    newNode = new Node(course);         //creates the new node
+    newNode->data = course;             //stores the new info in the newly created node
+    newNode->next = nullptr;            //sets the next node of the newNode to nullptr
 
+    if (this->head == nullptr)          //if list is empty, the newly created node will be the head (first) node
+    {
+        this->head = newNode;           //assign the new node pointer to head (first)
+        this->tail = newNode;           //assign the new node pointer to tail (last)
+    } 
+    else 
+    {
+        (this->tail)->next = newNode;  //insert newNode after last
+        this->tail = newNode;          //make last point to actual last node in the list
+    }
+    this->totalCredits++;             //increments totalCredits node
+
+    newNode = nullptr;               //makes sure the list cannot be seen esxcept through the linked list
 }
 
 /**
