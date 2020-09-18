@@ -7,7 +7,6 @@
 
 #include "Course.h"
 #include "Student.h"
-
 using namespace std;
 
 using StudentList = vector<Student>;
