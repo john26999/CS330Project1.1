@@ -48,7 +48,7 @@ Schedule::~Schedule()
     while (head != nullptr)     //while loop that makes sure the list is not empty before traversing through the list
     {
         temp = head;            //sets the temp pointer to the head (first) node
-        head = head ->next;     //advances the head (first) node to the next node in the list
+        head = head->next;     //advances the head (first) node to the next node in the list
         delete temp;            //deallocates the memory occupied by temp
 
         std::cout << "Deletion of Node is processing!" << "\n";
@@ -66,8 +66,8 @@ Schedule::~Schedule()
  */
 void Schedule::appendNoCheck(Course course)
 {
-    Node *newNode;                      //pointer to create a new node
-    newNode = new Node(course);                 //creates the new node
+    Node *newNode = nullptr;             //pointer to create a new node
+    newNode = new Node(course);          //creates the new node
     newNode->data = course;             //stores the new info in the newly created node
     newNode->next = nullptr;            //sets the next node of the newNode to nullptr
 
@@ -83,7 +83,7 @@ void Schedule::appendNoCheck(Course course)
     }
     this->totalCredits++;             //increments totalCredits node
 
-    newNode = nullptr;               //makes sure the list cannot be seen esxcept through the linked list
+    newNode = nullptr;               //makes sure the list cannot be seen except through the linked list
 }
 
 /**

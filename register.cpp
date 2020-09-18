@@ -7,7 +7,6 @@
 
 #include "Course.h"
 #include "Student.h"
-#include "Schedule.h"
 
 using namespace std;
 
