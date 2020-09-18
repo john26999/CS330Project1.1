@@ -13,9 +13,9 @@ Schedule::Node::Node(Course c)
 //------------------------------------------------------------------------------
 Schedule::Schedule()
 {
-    head = nullptr;
-    tail = nullptr;
-    totalCredits = 0;
+    this->head = nullptr;
+    this->tail = nullptr;
+    this->totalCredits = 0;
 }
 
 /**
@@ -43,22 +43,22 @@ Schedule::Schedule(const Schedule& src)
  */
 Schedule::~Schedule()
 {
-    Node *temp;                 //pointer to deallocate memory
+    Node *tempNode;             //pointer to deallocate memory
 
     while (head != nullptr)     //while loop that makes sure the list is not empty before traversing through the list
     {
-        temp = head;            //sets the temp pointer to the head (first) node
+        tempNode = head;       //sets the temp pointer to the head (first) node
         head = head->next;     //advances the head (first) node to the next node in the list
-        delete temp;            //deallocates the memory occupied by temp
+        delete tempNode;       //deallocates the memory occupied by temp
 
         std::cout << "Deletion of Node is processing!" << "\n";
     }
 
     std::cout << "List was deleted!" << "\n";
 
-    tail = nullptr;             //initilaizes the tail (last) node to nullptr;
+    this->tail = nullptr;             //initilaizes the tail (last) node to nullptr;
 
-    totalCredits = 0;           //sets the node back to zero
+    this->totalCredits = 0;           //sets the node back to zero
 }
 
 /**
